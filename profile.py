@@ -7,7 +7,7 @@ node_list = {}
 # ====================================
 node_list["A"] = {
     "Subnet": ["192.168.1.0/24", "192.168.4.0/24"],
-    "link": ["B", "D"],
+    "Link": ["B", "D"],
     "IPAddress": "127.0.0.1",
     "Port": 8101,
 }
@@ -17,7 +17,7 @@ node_list["A"] = {
 # ====================================
 node_list["B"] = {
     "Subnet": ["192.168.2.0/24"],
-    "link": ["A", "C", "D"],
+    "Link": ["A", "C", "D"],
     "IPAddress": "127.0.0.1",
     "Port": 8102,
 }
@@ -27,7 +27,7 @@ node_list["B"] = {
 # ====================================
 node_list["C"] = {
     "Subnet": ["192.168.2.0/24", "192.168.3.0/24"],
-    "link": ["B", "F"],
+    "Link": ["B", "F"],
     "IPAddress": "127.0.0.1",
     "Port": 8103,
 }
@@ -37,7 +37,7 @@ node_list["C"] = {
 # ====================================
 node_list["D"] = {
     "Subnet": ["192.168.4.0/24"],
-    "link": ["A", "B", "E"],
+    "Link": ["A", "B", "E"],
     "IPAddress": "127.0.0.1",
     "Port": 8104,
 }
@@ -47,7 +47,7 @@ node_list["D"] = {
 # ====================================
 node_list["E"] = {
     "Subnet": ["192.168.6.0/24"],
-    "link": ["D", "F"],
+    "Link": ["D", "F"],
     "IPAddress": "127.0.0.1",
     "Port": 8105,
 }
@@ -57,7 +57,7 @@ node_list["E"] = {
 # ====================================
 node_list["F"] = {
     "Subnet": ["192.168.5.0/24"],
-    "link": ["C", "E"],
+    "Link": ["C", "E"],
     "IPAddress": "127.0.0.1",
     "Port": 8106,
 }
@@ -67,7 +67,7 @@ node_list["F"] = {
 # ====================================
 node_list["G"] = {
     "Subnet": ["192.168.5.0/24"],
-    "link": ["E"],
+    "Link": ["E"],
     "IPAddress": "127.0.0.1",
     "port": 8107,
 }
@@ -78,10 +78,10 @@ def Profile_All(name):
         node_profile = node_list[name]
         return NodeMaster(
             name,
-            node_profile["IPAddressAddress"],
+            node_profile["IPAddress"],
             node_profile["Port"],
             node_profile["Subnet"],
-            node_profile["link"]
+            node_profile["Link"]
         )
     else:
         return None

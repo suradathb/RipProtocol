@@ -6,9 +6,9 @@ class Response:
             self.IPAddress = str()
             self.Port = 0
             self.Data = str()
-            self.recived = False
+            self.received = False
         else:
             self.IPAddress = res[1][0]
             self.Port = int(res[1][1])
             self.Data = res[0].decode('utf-8')
-            self.recived = True
+            self.received = True
